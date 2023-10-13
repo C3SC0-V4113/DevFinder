@@ -17,22 +17,27 @@ export const DevCard = () => {
       {status === "loading" ? (
         <></>
       ) : (
-        <div className="flex flex-row p-5 ">
-          <Image
-            src={activeDev.avatar_url || "/"}
-            alt="avatar-pic"
-            style={{ objectFit: "cover", width: "auto", height: "auto" }}
-            className="rounded-full w-5 h-5"
-            width={100}
-            height={100}
-          />
-          <div className="flex flex-col">
-            <div className="flex flex-row justify-around">
-              <h2>{activeDev.name}</h2>
-              <p>Joined {activeDev.created_at}</p>
+        <div className="flex flex-col p-5 ">
+          <div className="flex flex-row">
+            <Image
+              src={activeDev.avatar_url || "/"}
+              alt="avatar-pic"
+              style={{ objectFit: "cover" }}
+              className="rounded-full w-28 h-28"
+              width={100}
+              height={100}
+            />
+            <div className="flex flex-col w-full pl-2">
+              <div className="flex flex-row justify-between ">
+                <h2>{activeDev.name}</h2>
+                <p>Joined {activeDev.created_at}</p>
+              </div>
+              <a href={activeDev.html_url}>@{activeDev.login}</a>
+              <p>{activeDev.bio}</p>
             </div>
-            <a href={activeDev.html_url}>@{activeDev.login}</a>
-            <p>{activeDev.bio}</p>
+          </div>
+
+          <div className="flex flex-col bg-gray-300 p-2 m-2 rounded">
             <div className="flex flex-row justify-between">
               <div className="flex flex-col">
                 <p>Repos</p>
@@ -47,15 +52,15 @@ export const DevCard = () => {
                 <h3>{activeDev.following}</h3>
               </div>
             </div>
-            <div className="flex xs:flex-col md:flex-row">
-              <div className="flex flex-col">
-                <p>{activeDev.location}</p>
-                <p>{activeDev.blog}</p>
-              </div>
-              <div className="flex flex-col">
-                <p>{activeDev.twitter_username}</p>
-                <p>{activeDev.company}</p>
-              </div>
+          </div>
+          <div className="flex sm:flex-col  md:flex-row p-2 m-2">
+            <div className="flex flex-col">
+              <p>{activeDev.location}</p>
+              <p>{activeDev.blog}</p>
+            </div>
+            <div className="flex flex-col">
+              <p>{activeDev.twitter_username}</p>
+              <p>{activeDev.company}</p>
             </div>
           </div>
         </div>
