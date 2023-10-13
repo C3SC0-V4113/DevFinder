@@ -4,12 +4,12 @@ import Image from "next/image";
 import { useEffect } from "react";
 
 export const DevCard = () => {
-  const { startGettingUsers } = useDevs();
+  const { startGettingUser } = useDevs();
 
   const { activeDev, status } = useAppSelector((state) => state.dev);
 
   useEffect(() => {
-    startGettingUsers("C3SC0-V4113");
+    startGettingUser("C3SC0-V4113");
   }, []);
 
   return (
@@ -21,10 +21,10 @@ export const DevCard = () => {
           <Image
             src={activeDev.avatar_url || "/"}
             alt="avatar-pic"
-            className="rounded-full"
+            style={{ objectFit: "cover", width: "auto", height: "auto" }}
+            className="rounded-full w-5 h-5"
             width={100}
             height={100}
-            style={{ objectFit: "contain" }}
           />
           <div className="flex flex-col">
             <div className="flex flex-row justify-around">

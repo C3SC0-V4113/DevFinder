@@ -10,7 +10,7 @@ export const useDevs = () => {
     auth: process.env.GH_TOKEN,
   });
 
-  const startGettingUsers = async (username: string) => {
+  const startGettingUser = async (username: string) => {
     dispatch(onLoading());
     try {
       const { data } = await octokit.request("GET /users/{username}", {
@@ -24,5 +24,5 @@ export const useDevs = () => {
       console.error(error);
     }
   };
-  return { startGettingUsers, dev };
+  return { startGettingUser, dev };
 };
