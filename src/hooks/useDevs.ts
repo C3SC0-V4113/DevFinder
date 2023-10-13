@@ -10,11 +10,11 @@ export const useDevs = () => {
     auth: process.env.GH_TOKEN,
   });
 
-  const startGettingUsers = async () => {
+  const startGettingUsers = async (username: string) => {
     dispatch(onLoading());
     try {
       const { data } = await octokit.request("GET /users/{username}", {
-        username: "C3SC0-V4113",
+        username,
         headers: {
           "X-GitHub-Api-Version": "2022-11-28",
         },

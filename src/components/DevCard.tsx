@@ -9,21 +9,22 @@ export const DevCard = () => {
   const { activeDev, status } = useAppSelector((state) => state.dev);
 
   useEffect(() => {
-    startGettingUsers();
+    startGettingUsers("C3SC0-V4113");
   }, []);
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full bg-white rounded-xl">
       {status === "loading" ? (
         <></>
       ) : (
-        <div className="flex flex-row">
+        <div className="flex flex-row p-5 ">
           <Image
             src={activeDev.avatar_url || "/"}
             alt="avatar-pic"
             className="rounded-full"
             width={100}
             height={100}
+            style={{ objectFit: "contain" }}
           />
           <div className="flex flex-col">
             <div className="flex flex-row justify-around">
