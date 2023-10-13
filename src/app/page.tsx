@@ -10,7 +10,7 @@ import { store } from "@/store/store";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-start p-24">
+    <main className="w-full flex flex-col items-center justify-start p-5 lg:p-24">
       <Provider store={store}>
         <div className="flex flex-col w-full">
           <h1 className="font-mono font-semibold">devfinder</h1>
