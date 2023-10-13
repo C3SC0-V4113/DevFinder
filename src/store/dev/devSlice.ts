@@ -5,7 +5,7 @@ import { RootState } from "../store";
 interface DevState {
   status: string;
   activeDev: Data;
-  developers: [Data] | [];
+  developers: Data[];
 }
 
 const initialState: DevState = {
@@ -25,10 +25,13 @@ export const devSlice = createSlice({
       state.status = "loaded";
       state.activeDev = payload;
     },
+    onQueueDev: (state) => {
+      state.developers = [...state.developers, state.activeDev];
+    },
   },
 });
 // Action creators are generated for each case reducer function
-export const { onLoading, onSelectDev } = devSlice.actions;
+export const { onLoading, onSelectDev, onQueueDev } = devSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectDev = (state: RootState) => state.dev.activeDev;

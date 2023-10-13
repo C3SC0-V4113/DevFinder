@@ -8,9 +8,9 @@ export const DevCard = () => {
 
   const { activeDev, status } = useAppSelector((state) => state.dev);
 
-  useEffect(() => {
-    startGettingUser("C3SC0-V4113");
-  }, []);
+  // useEffect(() => {
+  //   startGettingUser("C3SC0-V4113");
+  // }, []);
 
   return (
     <div className="flex flex-col w-full bg-white rounded-xl">

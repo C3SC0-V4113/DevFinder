@@ -43,7 +43,6 @@ export const DevInput = () => {
               />
               <button
                 type="submit"
-                disabled={isSubmitting}
                 className="absolute h-10 inset-y-1 right-2 bg-blue-600 rounded text-gray-50 p-2 flex items-center"
               >
                 Search
